@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Yura Spirin</title>
+    <link rel="stylesheet" href="style.css" />
+
+
+    <!--
+        Lenis — плавная инерционная прокрутка.
+        Подключается ПЕРЕД script.js чтобы он видел Lenis.
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor"></div>
+    <div id="cursorRing"></div>
+
+    <!--
+        HOVER CARD — появляется рядом с курсором при наведении на проект.
+        position:fixed, управляется через JS.
+    -->
+    <div id="project-hover-card">
+        <img id="project-hover-img" src="" alt="Project preview">
+    </div>
+
+    <!-- HEADER -->
+    <header class="container">
+        <div class="logo">© Code By Yura Spirin</div>
+        <nav class="desktop-nav">
+            <a href="#">Work</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <!-- BURGER BUTTON (mobile only) -->
+        <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <nav class="mobile-nav">
+            <a href="#" class="mobile-link">Work</a>
+            <a href="#" class="mobile-link">About</a>
+            <a href="#" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- HERO
+         .line-wrap — обёртка с overflow:hidden (JS)
+         .line-inner — сам текст который вылетает снизу (JS)
+    -->
+    <section class="hero">
+        <div class="hero-name-wrapper">
+            <h1 class="hero-name">
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+                    <path
+                        d="M47.4507 19.2559C48.4138 18.4 49.8886 18.4871 50.7446 19.4502C51.6001 20.4134 51.5132 21.8882 50.5503 22.7441L45.0522 27.6309C41.4097 30.8687 38.5148 33.4484 35.9644 35.1914C33.3595 36.9716 30.8679 38.0575 28.0005 38.0576C25.133 38.0576 22.6414 36.9715 20.0366 35.1914C19.2629 34.6626 18.4592 34.0538 17.6108 33.376C18.9737 32.1677 20.1464 31.1347 21.186 30.2539C21.7025 30.6518 22.1946 31.0134 22.6694 31.3379C24.8617 32.8361 26.4327 33.3906 28.0005 33.3906C29.5682 33.3905 31.1392 32.8362 33.3315 31.3379C35.5786 29.8021 38.2171 27.4631 41.9517 24.1436L47.4507 19.2559ZM5.25635 19.4502C6.1124 18.4871 7.58713 18.4 8.55029 19.2559L12.2524 22.5469C11.1309 23.5213 9.95872 24.5641 8.729 25.6572L5.45068 22.7441C4.48763 21.8881 4.40052 20.4134 5.25635 19.4502Z"
+                        fill="#ffff" />
+                    <path
+                        d="M28 17.9424C30.8677 17.9424 33.3588 19.0282 35.9639 20.8086C36.7372 21.3371 37.5398 21.9458 38.3877 22.623C37.025 23.8311 35.853 24.8645 34.8135 25.7451C34.2971 25.3473 33.8058 24.9856 33.3311 24.6611C31.1386 23.1628 29.5678 22.6084 28 22.6084C26.4322 22.6084 24.8613 23.1628 22.6689 24.6611C20.4219 26.1968 17.7833 28.5359 14.0488 31.8555L8.5498 36.7432C7.58668 37.5991 6.11196 37.5128 5.25586 36.5498C4.39984 35.5866 4.48708 34.111 5.4502 33.2549L10.9482 28.3682C14.5907 25.1304 17.4858 22.5516 20.0361 20.8086C22.6412 19.0283 25.1323 17.9424 28 17.9424ZM50.5498 33.2549C51.5129 34.111 51.6001 35.5866 50.7441 36.5498C49.888 37.5128 48.4133 37.5991 47.4502 36.7432L43.7461 33.4512C44.8678 32.4765 46.0406 31.4342 47.2705 30.3408L50.5498 33.2549Z"
+                        fill="#ffff" />
+                </svg>
+                <span>Yura Spirin</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+                    <path
+                        d="M47.4507 19.2559C48.4138 18.4 49.8886 18.4871 50.7446 19.4502C51.6001 20.4134 51.5132 21.8882 50.5503 22.7441L45.0522 27.6309C41.4097 30.8687 38.5148 33.4484 35.9644 35.1914C33.3595 36.9716 30.8679 38.0575 28.0005 38.0576C25.133 38.0576 22.6414 36.9715 20.0366 35.1914C19.2629 34.6626 18.4592 34.0538 17.6108 33.376C18.9737 32.1677 20.1464 31.1347 21.186 30.2539C21.7025 30.6518 22.1946 31.0134 22.6694 31.3379C24.8617 32.8361 26.4327 33.3906 28.0005 33.3906C29.5682 33.3905 31.1392 32.8362 33.3315 31.3379C35.5786 29.8021 38.2171 27.4631 41.9517 24.1436L47.4507 19.2559ZM5.25635 19.4502C6.1124 18.4871 7.58713 18.4 8.55029 19.2559L12.2524 22.5469C11.1309 23.5213 9.95872 24.5641 8.729 25.6572L5.45068 22.7441C4.48763 21.8881 4.40052 20.4134 5.25635 19.4502Z"
+                        fill="#ffff" />
+                    <path
+                        d="M28 17.9424C30.8677 17.9424 33.3588 19.0282 35.9639 20.8086C36.7372 21.3371 37.5398 21.9458 38.3877 22.623C37.025 23.8311 35.853 24.8645 34.8135 25.7451C34.2971 25.3473 33.8058 24.9856 33.3311 24.6611C31.1386 23.1628 29.5678 22.6084 28 22.6084C26.4322 22.6084 24.8613 23.1628 22.6689 24.6611C20.4219 26.1968 17.7833 28.5359 14.0488 31.8555L8.5498 36.7432C7.58668 37.5991 6.11196 37.5128 5.25586 36.5498C4.39984 35.5866 4.48708 34.111 5.4502 33.2549L10.9482 28.3682C14.5907 25.1304 17.4858 22.5516 20.0361 20.8086C22.6412 19.0283 25.1323 17.9424 28 17.9424ZM50.5498 33.2549C51.5129 34.111 51.6001 35.5866 50.7441 36.5498C49.888 37.5128 48.4133 37.5991 47.4502 36.7432L43.7461 33.4512C44.8678 32.4765 46.0406 31.4342 47.2705 30.3408L50.5498 33.2549Z"
+                        fill="#ffff" />
+                </svg>
+                <span>Yura Spirin</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+                    <path
+                        d="M47.4507 19.2559C48.4138 18.4 49.8886 18.4871 50.7446 19.4502C51.6001 20.4134 51.5132 21.8882 50.5503 22.7441L45.0522 27.6309C41.4097 30.8687 38.5148 33.4484 35.9644 35.1914C33.3595 36.9716 30.8679 38.0575 28.0005 38.0576C25.133 38.0576 22.6414 36.9715 20.0366 35.1914C19.2629 34.6626 18.4592 34.0538 17.6108 33.376C18.9737 32.1677 20.1464 31.1347 21.186 30.2539C21.7025 30.6518 22.1946 31.0134 22.6694 31.3379C24.8617 32.8361 26.4327 33.3906 28.0005 33.3906C29.5682 33.3905 31.1392 32.8362 33.3315 31.3379C35.5786 29.8021 38.2171 27.4631 41.9517 24.1436L47.4507 19.2559ZM5.25635 19.4502C6.1124 18.4871 7.58713 18.4 8.55029 19.2559L12.2524 22.5469C11.1309 23.5213 9.95872 24.5641 8.729 25.6572L5.45068 22.7441C4.48763 21.8881 4.40052 20.4134 5.25635 19.4502Z"
+                        fill="#ffff" />
+                    <path
+                        d="M28 17.9424C30.8677 17.9424 33.3588 19.0282 35.9639 20.8086C36.7372 21.3371 37.5398 21.9458 38.3877 22.623C37.025 23.8311 35.853 24.8645 34.8135 25.7451C34.2971 25.3473 33.8058 24.9856 33.3311 24.6611C31.1386 23.1628 29.5678 22.6084 28 22.6084C26.4322 22.6084 24.8613 23.1628 22.6689 24.6611C20.4219 26.1968 17.7833 28.5359 14.0488 31.8555L8.5498 36.7432C7.58668 37.5991 6.11196 37.5128 5.25586 36.5498C4.39984 35.5866 4.48708 34.111 5.4502 33.2549L10.9482 28.3682C14.5907 25.1304 17.4858 22.5516 20.0361 20.8086C22.6412 19.0283 25.1323 17.9424 28 17.9424ZM50.5498 33.2549C51.5129 34.111 51.6001 35.5866 50.7441 36.5498C49.888 37.5128 48.4133 37.5991 47.4502 36.7432L43.7461 33.4512C44.8678 32.4765 46.0406 31.4342 47.2705 30.3408L50.5498 33.2549Z"
+                        fill="#ffff" />
+                </svg>
+                <span>Yura Spirin</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+                    <path
+                        d="M47.4507 19.2559C48.4138 18.4 49.8886 18.4871 50.7446 19.4502C51.6001 20.4134 51.5132 21.8882 50.5503 22.7441L45.0522 27.6309C41.4097 30.8687 38.5148 33.4484 35.9644 35.1914C33.3595 36.9716 30.8679 38.0575 28.0005 38.0576C25.133 38.0576 22.6414 36.9715 20.0366 35.1914C19.2629 34.6626 18.4592 34.0538 17.6108 33.376C18.9737 32.1677 20.1464 31.1347 21.186 30.2539C21.7025 30.6518 22.1946 31.0134 22.6694 31.3379C24.8617 32.8361 26.4327 33.3906 28.0005 33.3906C29.5682 33.3905 31.1392 32.8362 33.3315 31.3379C35.5786 29.8021 38.2171 27.4631 41.9517 24.1436L47.4507 19.2559ZM5.25635 19.4502C6.1124 18.4871 7.58713 18.4 8.55029 19.2559L12.2524 22.5469C11.1309 23.5213 9.95872 24.5641 8.729 25.6572L5.45068 22.7441C4.48763 21.8881 4.40052 20.4134 5.25635 19.4502Z"
+                        fill="#ffff" />
+                    <path
+                        d="M28 17.9424C30.8677 17.9424 33.3588 19.0282 35.9639 20.8086C36.7372 21.3371 37.5398 21.9458 38.3877 22.623C37.025 23.8311 35.853 24.8645 34.8135 25.7451C34.2971 25.3473 33.8058 24.9856 33.3311 24.6611C31.1386 23.1628 29.5678 22.6084 28 22.6084C26.4322 22.6084 24.8613 23.1628 22.6689 24.6611C20.4219 26.1968 17.7833 28.5359 14.0488 31.8555L8.5498 36.7432C7.58668 37.5991 6.11196 37.5128 5.25586 36.5498C4.39984 35.5866 4.48708 34.111 5.4502 33.2549L10.9482 28.3682C14.5907 25.1304 17.4858 22.5516 20.0361 20.8086C22.6412 19.0283 25.1323 17.9424 28 17.9424ZM50.5498 33.2549C51.5129 34.111 51.6001 35.5866 50.7441 36.5498C49.888 37.5128 48.4133 37.5991 47.4502 36.7432L43.7461 33.4512C44.8678 32.4765 46.0406 31.4342 47.2705 30.3408L50.5498 33.2549Z"
+                        fill="#ffff" />
+                </svg>
+                <span>Yura Spirin</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+                    <path
+                        d="M47.4507 19.2559C48.4138 18.4 49.8886 18.4871 50.7446 19.4502C51.6001 20.4134 51.5132 21.8882 50.5503 22.7441L45.0522 27.6309C41.4097 30.8687 38.5148 33.4484 35.9644 35.1914C33.3595 36.9716 30.8679 38.0575 28.0005 38.0576C25.133 38.0576 22.6414 36.9715 20.0366 35.1914C19.2629 34.6626 18.4592 34.0538 17.6108 33.376C18.9737 32.1677 20.1464 31.1347 21.186 30.2539C21.7025 30.6518 22.1946 31.0134 22.6694 31.3379C24.8617 32.8361 26.4327 33.3906 28.0005 33.3906C29.5682 33.3905 31.1392 32.8362 33.3315 31.3379C35.5786 29.8021 38.2171 27.4631 41.9517 24.1436L47.4507 19.2559ZM5.25635 19.4502C6.1124 18.4871 7.58713 18.4 8.55029 19.2559L12.2524 22.5469C11.1309 23.5213 9.95872 24.5641 8.729 25.6572L5.45068 22.7441C4.48763 21.8881 4.40052 20.4134 5.25635 19.4502Z"
+                        fill="#ffff" />
+                    <path
+                        d="M28 17.9424C30.8677 17.9424 33.3588 19.0282 35.9639 20.8086C36.7372 21.3371 37.5398 21.9458 38.3877 22.623C37.025 23.8311 35.853 24.8645 34.8135 25.7451C34.2971 25.3473 33.8058 24.9856 33.3311 24.6611C31.1386 23.1628 29.5678 22.6084 28 22.6084C26.4322 22.6084 24.8613 23.1628 22.6689 24.6611C20.4219 26.1968 17.7833 28.5359 14.0488 31.8555L8.5498 36.7432C7.58668 37.5991 6.11196 37.5128 5.25586 36.5498C4.39984 35.5866 4.48708 34.111 5.4502 33.2549L10.9482 28.3682C14.5907 25.1304 17.4858 22.5516 20.0361 20.8086C22.6412 19.0283 25.1323 17.9424 28 17.9424ZM50.5498 33.2549C51.5129 34.111 51.6001 35.5866 50.7441 36.5498C49.888 37.5128 48.4133 37.5991 47.4502 36.7432L43.7461 33.4512C44.8678 32.4765 46.0406 31.4342 47.2705 30.3408L50.5498 33.2549Z"
+                        fill="#ffff" />
+                </svg>
+            </h1>
+        </div>
+    </section>
+
+    <!-- HERO DESCRIPTION -->
+    <section class="rece container">
+        <div class="hero-tagline">
+            <h1>
+                I am a web developer<br />
+                specializing in building fast,<br />
+                reliable, and scalable websites
+            </h1>
+            <p class="hero-desc">
+                * My goal is to transform design and<br />
+                ideas into fully functional digital products
+            </p>
+        </div>
+        <div class="hero-des">
+            <p>
+                I work with modern technologies and<br />
+                pay special attention to code quality,<br />
+                performance, and project stability
+            </p>
+            <div class="about-btn">
+                <button class="about-circle about-text magnetic">About me</button>
+            </div>
+        </div>
+    </section>
+
+    <!--
+        MARQUEE — бегущая строка со скиллами.
+        Два одинаковых блока создают бесконечный эффект.
+    -->
+
+
+    <!-- RECENT WORK
+         Класс .sr на каждом .project — scroll reveal
+         Кнопка .about-circle получает .magnetic — эффект магнита
+    -->
+    <section class="recent-work container">
+
+
+
+        <div class="recent-title sr">SKILLS</div>
+
+        <div class="project sr">
+            <span>Frontend development</span>
+
+        </div>
+        <div class="project sr">
+            <span>Backend development</span>
+
+        </div>
+        <div class="project sr">
+            <span>Responsive development</span>
+
+        </div>
+        <div class="project sr">
+            <span>API integration</span>
+
+        </div>
+        <div class="project sr">
+            <span>Performance optimization</span>
+
+        </div>
+
+        <div class="more-work sr">
+            <a href="#" class="more-btn">More work</a>
+        </div>
+    </section>
+
+    <!-- GRID SECTION -->
+    <section class="grid-section container">
+        <div class="grid-item sr">
+            <div class="portfolio-card">
+                <a href="https://strxxxlrd.github.io/strxxxlrd1.github.io/" target="_blank" rel="noopener noreferrer">
+                    <div class="preview-wrapper">
+                        <img class="site-preview" src="img/Rectangle 4.png" alt="Проект GoldenCrate" loading="lazy">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="grid-item sr">
+            <div class="portfolio-card">
+                <a href="https://strxxxlrd.github.io/first-work-by-lessons-/" target="_blank" rel="noopener noreferrer">
+                    <div class="preview-wrapper">
+                        <img class="site-preview"
+                            src="https://api.microlink.io?url=https://strxxxlrd.github.io/first-work-by-lessons-/&screenshot=true&embed=screenshot.url&fresh=true"
+                            alt="Проект first-work" loading="lazy">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="grid-item blank sr"></div>
+        <div class="grid-item blank sr"></div>
+        <div class="grid-item blank sr"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <div class="contact-wrapper">
+        <section class="contact">
+            <div class="container contact-inner">
+
+                <div class="contact-top">
+                    <div class="contact-left">
+                        <div class="contact-avatar-row">
+                            <img src="./img/hero-bg.png" class="contact-photo" alt="photo" />
+                        </div>
+                        <div class="contact-text">
+                            <h2 class="contact-title">Open to collaboration<br />and new projects</h2>
+                            <p class="contact-subtitle">If you have a task or an idea – feel free to get in touch</p>
+                            
+                        </div>
+                        <div class="contact-arrow">&#187;</div>
+                    </div>
+                    
+                </div>
+
+                <div class="contact-divider"></div>
+
+                <div class="contact-bottom">
+                    <div class="contact-links">
+                        <a href="https://mail.google.com/mail/?view=cm&to=mrfaserok1@gmail.com"
+                            class="contact-pill">mrfaserok1@gmail.com</a>
+                        <a href="tel:+79498307579" class="contact-pill">+7 949 830 75 79</a>
+                    </div>
+                    <a href="https://mail.google.com/mail/?view=cm&to=mrfaserok1@gmail.com"
+                        class="get-in-touch magnetic">Get in touch</a>
+                </div>
+
+            </div>
+
+            <footer class="site-footer">
+                <div class="container footer-inner">
+                    <div class="footer-col">
+                        <span class="footer-label">VERSION</span>
+                        <span>2026 © Edition</span>
+                    </div>
+                    <div class="footer-col">
+                        <span class="footer-label">SOCIALS</span>
+                        <div class="socials">
+                            <a href="#">Behance</a>
+                            <a href="#">GitHub</a>
+                            <a href="#">Telegram</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+
+
+</body>
+
+</html>
