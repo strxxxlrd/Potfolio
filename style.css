@@ -1122,5 +1122,8 @@ height:5rem;
     flex-direction: column;
     margin-left: 0.1rem;
 }
-
+.socials{
+    display: flex;
+    flex-direction: column;
+}
 }
