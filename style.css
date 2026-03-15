@@ -78,8 +78,15 @@ img {
 }
 
 @media (hover: none) and (pointer: coarse) {
-    #cursor, #cursorRing { display: none; }
-    body { cursor: auto; }
+
+    #cursor,
+    #cursorRing {
+        display: none;
+    }
+
+    body {
+        cursor: auto;
+    }
 }
 
 /* =========================
@@ -116,7 +123,9 @@ header.scrolled {
     z-index: 110;
 }
 
-.desktop-nav { display: none; }
+.desktop-nav {
+    display: none;
+}
 
 .desktop-nav a {
     margin-left: 1.5rem;
@@ -154,13 +163,19 @@ header.scrolled {
         width 0.35s cubic-bezier(.16, 1, .3, 1);
 }
 
-.burger span:nth-child(1) { width: 24px; }
-.burger span:nth-child(2) { width: 16px; }
+.burger span:nth-child(1) {
+    width: 24px;
+}
+
+.burger span:nth-child(2) {
+    width: 16px;
+}
 
 .burger.is-open span:nth-child(1) {
     width: 22px;
     transform: translateY(3.75px) rotate(45deg);
 }
+
 .burger.is-open span:nth-child(2) {
     width: 22px;
     transform: translateY(-3.75px) rotate(-45deg);
@@ -208,10 +223,27 @@ header.scrolled {
     transition: opacity 0.4s ease, transform 0.4s cubic-bezier(.16, 1, .3, 1);
 }
 
-.mobile-menu.is-open .mobile-link:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.2s; }
-.mobile-menu.is-open .mobile-link:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.28s; }
-.mobile-menu.is-open .mobile-link:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.36s; }
-.mobile-link:hover { opacity: 0.5; }
+.mobile-menu.is-open .mobile-link:nth-child(1) {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.2s;
+}
+
+.mobile-menu.is-open .mobile-link:nth-child(2) {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.28s;
+}
+
+.mobile-menu.is-open .mobile-link:nth-child(3) {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.36s;
+}
+
+.mobile-link:hover {
+    opacity: 0.5;
+}
 
 /* =========================
    HERO
@@ -258,8 +290,13 @@ header.scrolled {
 }
 
 @keyframes loop-scroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-39.4%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-39.4%);
+    }
 }
 
 /* =========================
@@ -325,7 +362,9 @@ header.scrolled {
     transition: opacity 0.2s ease;
 }
 
-.about-circle:hover { opacity: 0.85; }
+.about-circle:hover {
+    opacity: 0.85;
+}
 
 .about-text {
     font-size: clamp(0.65rem, 1.5vw, 1rem);
@@ -418,7 +457,10 @@ header.scrolled {
     display: inline-block;
 }
 
-.more-btn:hover { border-color: #333; color: #333; }
+.more-btn:hover {
+    border-color: #333;
+    color: #333;
+}
 
 /* =========================
    GRID SECTION
@@ -441,7 +483,9 @@ header.scrolled {
     min-height: 14rem;
 }
 
-.grid-item.blank { display: none; }
+.grid-item.blank {
+    display: none;
+}
 
 .grid-item .portfolio-card {
     width: 100%;
@@ -473,7 +517,9 @@ header.scrolled {
     transition: transform 0.45s ease;
 }
 
-.grid-item:hover .site-preview { transform: scale(1.07); }
+.grid-item:hover .site-preview {
+    transform: scale(1.07);
+}
 
 /* =========================
    HOVER CARD
@@ -492,7 +538,7 @@ header.scrolled {
     transition: opacity 0.35s ease, transform 0.35s cubic-bezier(.16, 1, .3, 1);
     top: 0;
     left: 0;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
 #project-hover-card.visible {
@@ -510,7 +556,9 @@ header.scrolled {
    CONTACT
 ========================= */
 
-.contact-wrapper { background-color: #fff; }
+.contact-wrapper {
+    background-color: #fff;
+}
 
 .contact {
     background-color: #111;
@@ -554,7 +602,9 @@ header.scrolled {
     display: block;
 }
 
-.contact-text { flex: 1; }
+.contact-text {
+    flex: 1;
+}
 
 .contact-title {
     font-family: Inter, sans-serif;
@@ -613,7 +663,10 @@ header.scrolled {
     white-space: nowrap;
 }
 
-.contact-pill:hover { border-color: #fff; color: #fff; }
+.contact-pill:hover {
+    border-color: #fff;
+    color: #fff;
+}
 
 .get-in-touch {
     background-color: #5b5bd6;
@@ -632,7 +685,10 @@ header.scrolled {
     padding: 0.5rem;
 }
 
-.get-in-touch:hover { background-color: #4a4ac4; transform: scale(1.05); }
+.get-in-touch:hover {
+    background-color: #4a4ac4;
+    transform: scale(1.05);
+}
 
 /* =========================
    FOOTER
@@ -683,7 +739,9 @@ header.scrolled {
     transition: color 0.2s;
 }
 
-.socials a:hover { color: #fff; }
+.socials a:hover {
+    color: #fff;
+}
 
 /* =========================
    PARTNERS
@@ -706,13 +764,37 @@ header.scrolled {
 ========================= */
 
 @media (prefers-reduced-motion: reduce) {
-    .sr { opacity: 1; transform: none; transition: none; }
-    .magnetic { transition: none; }
-    .contact { clip-path: none; transition: none; }
-    .hero-name { animation: none; }
+    .sr {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .magnetic {
+        transition: none;
+    }
+
+    .contact {
+        clip-path: none;
+        transition: none;
+    }
+
+    .hero-name {
+        animation: none;
+    }
+
     .portfolio-card .site-preview,
-    .get-in-touch, .more-btn, .about-circle, .socials a { transition: none; }
-    .mobile-menu { clip-path: none; transition: opacity 0.2s ease; }
+    .get-in-touch,
+    .more-btn,
+    .about-circle,
+    .socials a {
+        transition: none;
+    }
+
+    .mobile-menu {
+        clip-path: none;
+        transition: opacity 0.2s ease;
+    }
 }
 
 /* =========================
@@ -737,7 +819,9 @@ header.scrolled {
         gap: 1rem;
     }
 
-    .grid-item.blank { display: block; }
+    .grid-item.blank {
+        display: block;
+    }
 
     .footer-inner {
         flex-direction: row;
@@ -757,11 +841,21 @@ header.scrolled {
         margin: 0 auto;
     }
 
-    .desktop-nav { display: flex; }
-    .burger { display: none; }
-    .mobile-menu { display: none; }
+    .desktop-nav {
+        display: flex;
+    }
 
-    .hero { height: 110dvh; }
+    .burger {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    .hero {
+        height: 110dvh;
+    }
 
     .hero-name-wrapper {
         position: static;
@@ -800,7 +894,9 @@ header.scrolled {
         padding-bottom: 1.25rem;
     }
 
-    .more-work { margin: 5rem 0; }
+    .more-work {
+        margin: 5rem 0;
+    }
 
     .grid-section {
         grid-template-columns: repeat(3, 1fr);
@@ -808,40 +904,59 @@ header.scrolled {
         padding-bottom: 3.75rem;
     }
 
-    .grid-item { min-height: 12.5rem; }
-    .grid-item.blank { display: block; }
-    .portfolio-card .preview-wrapper { min-height: 12.5rem; }
+    .grid-item {
+        min-height: 12.5rem;
+    }
 
-    .contact-arrow { display: block; }
+    .grid-item.blank {
+        display: block;
+    }
+
+    .portfolio-card .preview-wrapper {
+        min-height: 12.5rem;
+    }
+
+    .contact-arrow {
+        display: block;
+    }
 
     .footer-inner {
         flex-direction: row;
         justify-content: space-between;
         padding: 1.25rem 1.875rem;
     }
-     .contact-bottom{
+
+    .contact-bottom {
         flex-direction: column;
         gap: 1rem;
     }
 
     .socials {
         flex-direction: column;
-        
+
     }
-    
+
     .contact-left {
         flex-direction: column;
         align-items: center;
         width: 100%;
         gap: 1rem;
     }
-    .contact-title{
+
+    .contact-title {
         text-align: center;
     }
 
-    .contact-subtitle{
+    .contact-subtitle {
         text-align: center;
-    } 
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: auto;
+    }
 }
 
 /* =========================
@@ -866,9 +981,13 @@ header.scrolled {
         gap: 1rem;
     }
 
-    .contact-avatar-row { margin-top: 0; }
+    .contact-avatar-row {
+        margin-top: 0;
+    }
 
-    .contact-arrow { display: none; }
+    .contact-arrow {
+        display: none;
+    }
 
 
     .get-in-touch {
@@ -876,22 +995,29 @@ header.scrolled {
         height: 5.5rem;
     }
 
-    .contact-bottom{
+    .contact-bottom {
         flex-direction: column;
         gap: 1rem;
     }
 
     .socials {
         flex-direction: column;
-        
+
     }
 
 
-    .contact-title{
+    .contact-title {
         text-align: center;
     }
 
-    .contact-subtitle{
+    .contact-subtitle {
         text-align: center;
-    }   
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: auto;
+    }
 }
