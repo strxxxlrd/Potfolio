@@ -1109,7 +1109,7 @@ line-height: 160%; /* 2.4rem */
 }
 
 .contact-photo {
-    margin-left: 5rem;
+    margin-left: 9rem;
   width: 5rem;
 height:5rem;
   border-radius: 50%;
@@ -1125,5 +1125,19 @@ height:5rem;
 .socials{
     display: flex;
     flex-direction: column;
+}
+
+.footer-col{
+    margin-top: auto;
+    
+}
+
+.contact-links{
+    margin-left: 2.5rem;
+}
+
+.get-in-touch {
+    margin-top: 1.5rem;
+    margin-left: 9rem;
 }
 }
